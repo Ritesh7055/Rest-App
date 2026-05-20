@@ -246,6 +246,7 @@ async function submitOrder() {
     placeOrderBtn.disabled = false;
     placeOrderBtn.textContent = 'Place Order';
   }
+  location.reload();
 }
 
 // Render Checkmark Animation and Order Confirmation ID
@@ -253,6 +254,7 @@ function showSuccessState(order) {
   // Clear the Cart
   cart = [];
   updateCart();
+  location.reload();
 
   // Hide the drawer footer elements temporarily
   drawerFooterContainer.style.display = 'none';
