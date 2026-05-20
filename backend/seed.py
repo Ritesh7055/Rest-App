@@ -34,6 +34,12 @@ def seed_menu():
                     description="a classic culinary staple made from an unleavened dough of wheat flour (usually durum semolina) and water"
                 ),
                 Menu(
+                    name="ICE CREAM",
+                    price=90,
+                    category="Desserts",
+                    description="a sweet, cold frozen dessert made from dairy products like milk and cream, blended with sugar and flavorings"
+                ),
+                Menu(
                     name="Cold Coffee",
                     price=70,
                     category="Drinks",
