@@ -10,39 +10,39 @@ def seed_menu():
         if db.query(Menu).count() == 0:
             starter_items = [
                 Menu(
-                    name="Gourmet Wagyu Burger",
-                    price=16.99,
-                    category="Mains",
-                    description="Premium Wagyu beef patty, sharp cheddar, caramelized onions, truffle aioli on a toasted brioche bun. Served with rustic fries."
+                    name="Burger",
+                    price=180,
+                    category="Fast-Food",
+                    description=" a popular and universally loved sandwich consisting of a cooked patty—traditionally made of seasoned ground beef—placed inside a sliced, often toasted bun"
                 ),
                 Menu(
                     name="Classic Margherita Pizza",
-                    price=13.49,
+                    price=150,
                     category="Mains",
-                    description="Fresh mozzarella, heirloom cherry tomatoes, sweet basil, and extra virgin olive oil on a charred sourdough crust."
+                    description="an iconic Italian dish featuring a flat base of leavened wheat dough topped with a vibrant tomato sauce, melted cheese, and a sprinkle of herbs."
                 ),
                 Menu(
-                    name="Truffle Parmesan Fries",
-                    price=7.99,
-                    category="Starters",
+                    name="French Fries",
+                    price=110,
+                    category="Fast Food",
                     description="Crisp hand-cut fries tossed in white truffle oil, grated parmesan cheese, and fresh parsley. Served with garlic dip."
                 ),
                 Menu(
-                    name="Crispy Calamari",
-                    price=11.99,
+                    name="Pasta",
+                    price=120,
                     category="Starters",
-                    description="Lightly battered squid ring, seasoned with sea salt and cracked black pepper, served with a spicy citrus remoulade."
+                    description="a classic culinary staple made from an unleavened dough of wheat flour (usually durum semolina) and water"
                 ),
                 Menu(
-                    name="Signature Iced Matcha Latte",
-                    price=5.49,
+                    name="Cold Coffee",
+                    price=70,
                     category="Drinks",
-                    description="Ceremonial grade Japanese Uji matcha whisked with organic honey and creamy oat milk over ice."
+                    description="a refreshing, caffeinated beverage blending rich coffee flavor with chilled milk, sugar, and ice"
                 ),
                 Menu(
-                    name="Chocolate Lava Soufflé",
-                    price=8.99,
-                    category="Desserts",
+                    name="Lassi",
+                    price=50,
+                    category="Drinks",
                     description="Decadent dark chocolate cake with a molten warm chocolate center, served with a scoop of Tahitian vanilla bean gelato."
                 )
             ]
