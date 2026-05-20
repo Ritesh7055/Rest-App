@@ -47,3 +47,5 @@ Open another browser tab/window and navigate to:
 - `POST /api/orders` - Place a new order
 - `GET /api/orders/pending` - Fetch all active orders (status: pending)
 - `PUT /api/orders/{id}` - Update order status (e.g. update to `delivered`)
+
+python -m uvicorn backend.main:app  to update database
