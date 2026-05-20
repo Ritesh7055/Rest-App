@@ -78,7 +78,7 @@ function renderMenu(items) {
       <div>
         <div class="menu-card-header">
           <h3 class="menu-item-name">${item.name}</h3>
-          <span class="menu-item-price">$${item.price.toFixed(2)}</span>
+          <span class="menu-item-price">₹${item.price.toFixed(2)}</span>
         </div>
         <p class="menu-item-description">${item.description || 'No description available.'}</p>
       </div>
@@ -152,8 +152,8 @@ function updateCart() {
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
   cartCount.textContent = totalCount;
-  cartTotal.textContent = `$${totalPrice.toFixed(2)}`;
-  drawerTotalPrice.textContent = `$${totalPrice.toFixed(2)}`;
+  cartTotal.textContent = `₹${totalPrice.toFixed(2)}`;
+  drawerTotalPrice.textContent = `₹${totalPrice.toFixed(2)}`;
 
   if (totalCount > 0) {
     cartFloatingBar.classList.add('active');
@@ -184,7 +184,7 @@ function renderCartDrawer() {
         <div class="cart-item-row">
           <div class="cart-item-details">
             <div class="cart-item-name">${item.name}</div>
-            <div class="cart-item-price">$${item.price.toFixed(2)} each</div>
+            <div class="cart-item-price">₹${item.price.toFixed(2)} each</div>
           </div>
           <div class="quantity-controls">
             <button class="qty-btn" onclick="changeQuantity(${item.id}, -1)">&minus;</button>
@@ -358,12 +358,12 @@ async function pollOrderStatus(orderId) {
     itemsList.innerHTML = order.items.map(item => `
       <div class="tracking-item">
         <span><span class="tracking-qty">${item.quantity}x</span>${item.menu.name}</span>
-        <span>$${(item.menu.price * item.quantity).toFixed(2)}</span>
+        <span>₹${(item.menu.price * item.quantity).toFixed(2)}</span>
       </div>
     `).join('');
 
     // Update Total Price
-    document.getElementById('tracking-total-price').textContent = `$${order.total_price.toFixed(2)}`;
+    document.getElementById('tracking-total-price').textContent = `₹${order.total_price.toFixed(2)}`;
 
     // Show action area if order is delivered
     const actionArea = document.getElementById('tracking-action-area');
