@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gourmet QR Ordering</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Dark Header -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-logo">🍽️</span>
+        <span class="brand-name">GourmetBite</span>
+      </div>
+      <div id="table-display" class="table-badge">
+        <span>📍</span>
+        <span id="table-label">Table: Takeaway</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Menu Interface -->
+  <main>
+    <!-- Order Status Container (initially hidden) -->
+    <div id="order-status-container" style="display: none;" class="tracking-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+        <h2 style="font-size: 1.2rem; font-weight: 700; margin: 0;">Tracking Order #<span id="tracking-id">0</span></h2>
+        <span id="tracking-status-badge" class="status-badge pending">pending</span>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; letter-spacing: 0.05em; font-weight: 600;">Ordered Items</h4>
+        <div id="tracking-items-list">
+          <!-- Items will be injected here -->
+        </div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f5f5f4; padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem;">
+        <span style="font-weight: 500; font-size: 0.9rem; color: var(--text-muted);">Total Price</span>
+        <strong id="tracking-total-price" style="font-size: 1.1rem; color: var(--primary);">$0.00</strong>
+      </div>
+      <div id="tracking-action-area" style="text-align: right; display: none;">
+        <button class="place-order-btn" style="padding: 0.5rem 1.25rem; font-size: 0.9rem; width: auto;" onclick="clearActiveOrder()">Order More Items</button>
+      </div>
+    </div>
+
+    <div class="welcome-hero">
+      <h1>Welcome back</h1>
+      <p>Scan the table QR code to order or select takeaway.</p>
+    </div>
+
+    <!-- Category Selector -->
+    <div id="category-container" class="category-bar">
+      <button class="category-btn active" onclick="filterCategory('All')">All Items</button>
+      <button class="category-btn" onclick="filterCategory('Starters')">Starters</button>
+      <button class="category-btn" onclick="filterCategory('Mains')">Mains</button>
+      <button class="category-btn" onclick="filterCategory('Drinks')">Drinks</button>
+      <button class="category-btn" onclick="filterCategory('Desserts')">Desserts</button>
+    </div>
+
+    <!-- Menu Items Grid -->
+    <div id="menu-grid" class="menu-grid">
+      <!-- Dynamically filled by JS -->
+      <div class="empty-state">
+        <div class="empty-state-icon">⌛</div>
+        <div class="empty-state-title">Loading Menu...</div>
+        <div class="empty-state-subtitle">Preparing fresh options for you</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating Sticky Bottom Cart Capsule -->
+  <div id="cart-floating-bar" class="cart-floating-bar">
+    <div class="cart-info">
+      <div id="cart-count" class="cart-count-badge">0</div>
+      <div id="cart-total" class="cart-total-price">$0.00</div>
+    </div>
+    <button class="view-cart-btn" onclick="toggleCartDrawer(true)">View Order</button>
+  </div>
+
+  <!-- Cart Modal Drawer -->
+  <div id="modal-overlay" class="modal-overlay" onclick="toggleCartDrawer(false)"></div>
+  <div id="cart-drawer" class="modal-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Your Order</h3>
+      <button class="close-btn" onclick="toggleCartDrawer(false)">&times;</button>
+    </div>
+    
+    <!-- Drawer Dynamic Content -->
+    <div id="drawer-main-content" class="drawer-content">
+      <!-- Filled by app.js -->
+    </div>
+
+    <div id="drawer-footer-container" class="drawer-footer">
+      <div class="summary-row">
+        <strong>Total Amount</strong>
+        <strong id="drawer-total-price">$0.00</strong>
+      </div>
+      <button id="place-order-btn" class="place-order-btn" onclick="submitOrder()">
+        Place Order
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

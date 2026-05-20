@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitchen Display System (KDS)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="kitchen-body">
+
+  <!-- Top KDS Header -->
+  <header class="kitchen-header">
+    <div class="nav-container">
+      <div class="kitchen-title">
+        <span>🍳</span>
+        <span>Kitchen Dashboard</span>
+        <div class="connection-indicator"></div>
+      </div>
+      <!-- Synthesized sound alert toggle -->
+      <div class="table-badge" style="cursor: pointer;" id="sound-toggle" onclick="toggleSound()">
+        <span id="sound-icon">🔊</span>
+        <span id="sound-status">Sound Alert: ON</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Banner -->
+  <div id="notification-banner" class="notification-banner">
+    🔔 New Order Received!
+  </div>
+
+  <!-- Kitchen active orders grid -->
+  <main style="max-width: 1200px; padding: 1.5rem 1rem;">
+    <div id="kitchen-grid" class="kitchen-grid">
+      <!-- Dynamically filled by kitchen.js -->
+      <div class="kitchen-empty">
+        <div class="kitchen-empty-icon">🍳</div>
+        <h3 style="font-size: 1.25rem;">No Active Orders</h3>
+        <p style="color: #a8a29e; font-size: 0.9rem; margin-top: 0.25rem;">Orders will appear here as they are placed.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="kitchen.js"></script>
+</body>
+</html>
